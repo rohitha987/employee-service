@@ -1,11 +1,13 @@
 pipeline {	
-	agent any	tools {	    
+	agent any	
+	tools {	    
 		maven 'my-maven'		
 		jdk 'my-jdk'	
 	}	
 	stages {        
 		stage('Clone'){			
-			steps {git url:'https://github.com/rohitha987/employee-service.git', branch:'main'}			}		
+			steps {git url:'https://github.com/rohitha987/employee-service.git', branch:'main'}
+		}		
 		stage('Build'){			
 			steps {bat "mvn clean install -DskipTests"}		
 		}		
